@@ -11,6 +11,16 @@ const petAPI = (app) => {
     const result = await petService.getPets();
     res.send(result);
   });
+
+  route.get("/getSpeciesDetails", async (req, res) => {
+    const result = await petService.getSpeciesPets();
+    res.send(result);
+  });
+
+  route.post("/insertPet", async (req, res) => {
+    const result = await petService.insertPet();
+    res.send(result);
+  });
 };
 
 module.exports = petAPI;
